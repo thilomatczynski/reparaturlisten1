@@ -87,6 +87,41 @@
       text-decoration:none;
       font-weight:600;
     }
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* WhatsApp */
+.cta-whatsapp {
+  background: #ffffff;
+  color: #1d4ed8;
+}
+
+/* E-Mail */
+.cta-mail {
+  background: rgba(255,255,255,0.9);
+  color: #1f2933;
+}
 
     footer {
       background:#111827;
@@ -155,7 +190,8 @@
   </div>
 </section>
 
-<div class="cta">
+<div class="cta-buttons">
+  <a class="cta-button cta-whatsapp">
   <h2>Reparaturliste einreichen</h2>
   <p>Senden Sie mir gern Fotos oder eine kurze Beschreibung Ihrer Arbeiten – unkompliziert und unverbindlich.</p>
   <a href="https://wa.me/491796160844" style="display:inline-flex;align-items:center;gap:10px;">
@@ -164,7 +200,8 @@
   Anfrage per WhatsApp senden
 </a>
   <div style="margin-top:20px;">
-  <a href="mailto:mail@kleinauftrag.com" 
+  <a <div class="cta-buttons">
+  <a class="cta-button cta-whatsapp" href="mailto:mail@kleinauftrag.com" 
      style="display:inline-flex;align-items:center;gap:10px;
             background:#ffffff;color:#1f2933;
             padding:14px 26px;border-radius:30px;

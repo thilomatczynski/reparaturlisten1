@@ -1,141 +1,196 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reparaturlisten Service | Kleinreparaturen im Haushalt und Garten</title>
-  <meta name="description" content="Kleinreparaturen und Reparaturlisten Service in Teltow, Stahnsdorf, Kleinmachnow und Umgbeung. Feste Einsatzpakete statt offener Stundenabrechnung." />
+
+  <title>Reparaturlisten Service | Kleinreparaturen im Haushalt</title>
+  <meta name="description" content="Kleinreparaturen und Reparaturlisten Service in Teltow, Stahnsdorf und Kleinmachnow. Feste Einsatzpakete statt offener Stundenabrechnung." />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --dark:#1f2933;
       --gray:#6b7280;
       --light:#f9fafb;
       --accent:#2563eb;
+      --whatsapp:#25D366;
     }
-    * {box-sizing:border-box;}
-    body {
-      margin:0;
-      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
-      color:var(--dark);
-      background:var(--light);
-      line-height:1.6;
-    }
-    header {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #ffffff;
-  padding: 80px 20px 60px;
-  text-align: center;
-}
 
-    header h1 {font-size:42px; margin-bottom:10px; color:#111827;}
-    header p {font-size:18px; max-width:700px; margin:0 auto; color:#374151;}
-    header h1 {font-size:42px; margin-bottom:10px;}
-    header p {font-size:18px; max-width:700px; margin:0 auto; opacity:.9;}
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #25D366, #1ebe5d);
+      color: #ffffff;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.9);
+    }
 
     section {
-      max-width:1000px;
-      margin:0 auto;
-      padding:60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
 
     .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     .card {
-      background:#fff;
-      border-radius:14px;
-      padding:30px;
-      box-shadow:0 10px 25px rgba(0,0,0,.05);
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.05);
     }
 
-    h2 {margin-top:0; font-size:28px;}
-    ul {padding-left:18px;}
-    li {margin-bottom:8px;}
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
 
-    .steps ol {padding-left:18px;}
+    ul {
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
 
     .highlight {
-      background:#eef2ff;
-      border-left:5px solid var(--accent);
-      padding:20px;
-      border-radius:8px;
-      font-weight:500;
+      background: #eef2ff;
+      border-left: 5px solid var(--accent);
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: 500;
     }
 
     .cta {
-      background:linear-gradient(135deg,#25D366,#1ebe5d);
-      color:#ffffff;
-      text-align:center;
-      padding:70px 20px;
-    }
-    .cta h2 {font-size:34px;}
-    .cta p {max-width:600px; margin:15px auto 30px;}
-    .cta a {
-      display:inline-block;
-      background:#fff;
-      color:#1d4ed8;
-      padding:14px 26px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
+      background: linear-gradient(135deg, #25D366, #1ebe5d);
+      color: #ffffff;
+      text-align: center;
+      padding: 70px 20px;
     }
 
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 15px auto 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .cta-whatsapp {
+      background: #ffffff;
+      color: #1d4ed8;
+    }
+
+    .cta-mail {
+      background: rgba(255,255,255,0.9);
+      color: #1f2933;
+    }
 
     footer {
-      background:#111827;
-      color:#9ca3af;
-      text-align:center;
-      padding:25px 15px;
-      font-size:14px;
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Reparaturlisten Service</h1>
-  <p>Kleinreparaturen im Haushalt und Garten – mehrere kleine Arbeiten strukturiert in einem Termin erledigt. </p>
- </header>
+  <p>Kleinreparaturen im Haushalt – mehrere kleine Arbeiten strukturiert in einem Termin erledigt.</p>
+</header>
 
 <section>
   <div class="grid">
     <div class="card">
       <h2>Worum geht es?</h2>
-      <p>In vielen Haushalten sammeln sich kleine Reparaturen, die einzeln nie erledigt werden. Mein Reparaturlisten Service bündelt diese Arbeiten sinnvoll in einem Einsatz.</p>
+      <p>In vielen Haushalten sammeln sich kleine Reparaturen, die einzeln nie erledigt werden. Mein Reparaturlisten-Service bündelt diese Arbeiten sinnvoll in einem Einsatz.</p>
     </div>
 
     <div class="card">
       <h2>Typische Arbeiten</h2>
       <ul>
         <li>Regale, Bilder & Gardinenstangen montieren</li>
-        <li>Möbel aufbauen</li>
-        <li>Türen und Fenster einstellen</li>
         <li>Dübel setzen oder erneuern</li>
+        <li>Türen einstellen</li>
         <li>Sockelleisten befestigen</li>
-        <li>Reparaturen an Zäunen und Terrassen</li>
         <li>Kleinere Montage- und Nacharbeiten</li>
       </ul>
-      <p><strong>Keine</strong> Elektro-, Sanitär- oder Großbauarbeiten.</p>
+      <p><strong>Keine</strong> Elektro-, Sanitär- oder Bauarbeiten.</p>
     </div>
   </div>
 </section>
 
-<section class="steps">
+<section>
   <div class="grid">
     <div class="card">
       <h2>So läuft es ab</h2>
       <ol>
         <li>Sie senden mir eine kurze Beschreibung oder Fotos Ihrer Liste.</li>
-        <li>Ich schätze den Umfang vorab realistisch ein.</li>
-        <li>Sie erhalten eine klare Kosten- und Terminrückmeldung.</li>
+        <li>Ich schätze den Umfang realistisch ein.</li>
+        <li>Sie erhalten eine klare Rückmeldung zu Kosten & Termin.</li>
         <li>Die Arbeiten werden in einem Termin erledigt.</li>
       </ol>
     </div>
@@ -152,35 +207,33 @@
 <section>
   <div class="card">
     <h2>Einsatzgebiet</h2>
-    <p>Teltow · Stahnsdorf · Kleinmachnow · und Umgebung  </p>
+    <p>Teltow · Stahnsdorf · Kleinmachnow · und Umgebung</p>
   </div>
 </section>
 
-<div class="cta-button">
-  <a>
+<div class="cta">
   <h2>Reparaturliste einreichen</h2>
   <p>Senden Sie mir gern Fotos oder eine kurze Beschreibung Ihrer Arbeiten – unkompliziert und unverbindlich.</p>
-  <a href="https://wa.me/491796160844" style="display:inline-flex;align-items:center;gap:10px;">
-  <img src="whatsapp.png" alt="WhatsApp" width="22">
 
-  Anfrage per WhatsApp senden
-</a>
-  <div style="margin-top:20px;">
-  <a <div class="cta-button">
-  <a href="mailto:mail@kleinauftrag.com" 
-     style="display:inline-flex;align-items:center;gap:10px;
-            background:#ffffff;color:#1f2933;
-            padding:14px 26px;border-radius:30px;
-            text-decoration:none;font-weight:600;">
-    <span style="font-size:20px;">✉️</span>
-    Anfrage per E-Mail senden
-  </a>
-</div>
+  <div class="cta-buttons">
+    <a class="cta-button cta-whatsapp"
+       href="https://wa.me/491796160844"
+       aria-label="WhatsApp Anfrage senden">
+      <img src="whatsapp-icon.svg" alt="WhatsApp" width="22" height="22">
+      Anfrage per WhatsApp senden
+    </a>
 
+    <a class="cta-button cta-mail"
+       href="mailto:mail@kleinauftrag.com"
+       aria-label="E-Mail Anfrage senden">
+      <span style="font-size:20px;">✉️</span>
+      Anfrage per E-Mail senden
+    </a>
+  </div>
 </div>
 
 <footer>
-  Reparaturlisten Service · Kleinreparaturen im Haushalt und Garten
+  Reparaturlisten Service · Kleinreparaturen im Haushalt
 </footer>
 
 <!-- Impressum -->
